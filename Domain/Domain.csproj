@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Cliente\Aggregate\Factories\" />
+    <Folder Include="Cliente\Aggregate\ValueObjects\" />
+    <Folder Include="Cliente\Aggregate\Respositories\" />
+  </ItemGroup>
+
 </Project>
