@@ -6,7 +6,7 @@ namespace Domain.Cliente.Aggregate.ValueObjects
 	{
 		public DateTime Data { get; set; }
 
-		public int Idate => Valor(Data);
+		public int Idade => Valor(Data);
 
 		public DataNascimento(DateTime data)
 		{

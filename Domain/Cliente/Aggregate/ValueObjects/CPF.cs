@@ -13,6 +13,8 @@ namespace Domain.Cliente.Aggregate.ValueObjects
 
 		public CPF(string valor)
 		{
+			//validar CPF 
+
 			this.Valor = valor?.Replace(".", "").Replace("-", "") ?? throw new ArgumentNullException(nameof(CPF));
 		}
 
