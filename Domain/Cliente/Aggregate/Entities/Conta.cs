@@ -1,4 +1,6 @@
-﻿namespace Domain.Cliente.Aggregate.Entities
+﻿using System.Collections.Generic;
+
+namespace Domain.Cliente.Aggregate.Entities
 {
 	public abstract class Conta : Shared.Entity
 	{
@@ -6,6 +8,7 @@
 		public int Agencia { get; internal set; }
 		public int AgenciaDigito { get; internal set; }
 		public int Saldo { get; internal set; }
+		public IList<Transacao> Transacoes { get; set; }
 
 		protected Conta(int numero, int agencia, int saldo)
 		{

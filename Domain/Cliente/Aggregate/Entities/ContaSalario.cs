@@ -12,16 +12,22 @@
 
 		public override void Depositar()
 		{
+			//Logica de Negocio aqui
+
 			throw new System.NotImplementedException();
 		}
 
 		public override void Sacar()
 		{
+			//Logica de Negocio aqui
+
 			throw new System.NotImplementedException();
 		}
 
 		public override void Transferir()
 		{
+			//Logica de Negocio aqui
+
 			throw new System.NotImplementedException();
 		}
 	}

@@ -13,7 +13,7 @@ namespace Domain.Cliente.Aggregate.ValueObjects
 
 		public CPF(string valor)
 		{
-			this.Valor = valor?.Replace(".", "").Replace("-", "") ?? throw new ArgumentException(nameof(CPF));
+			this.Valor = valor?.Replace(".", "").Replace("-", "") ?? throw new ArgumentNullException(nameof(CPF));
 		}
 
 		private string ValorFormatado(string valor) => Convert.ToInt64(valor).ToString(@"000\.000\.000\-00");

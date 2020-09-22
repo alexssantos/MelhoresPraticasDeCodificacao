@@ -16,16 +16,22 @@ namespace Domain.Cliente.Aggregate.Entities
 
 		public override void Depositar()
 		{
+			//Logica de Negocio aqui
+
 			throw new NotImplementedException();
 		}
 
 		public override void Sacar()
 		{
+			//Logica de Negocio aqui
+
 			throw new NotImplementedException();
 		}
 
 		public override void Transferir()
 		{
+			//Logica de Negocio aqui
+
 			throw new NotImplementedException();
 		}
 	}

@@ -1,4 +1,5 @@
 ﻿using Domain.Cliente.Aggregate.Enums;
+using Domain.Cliente.Aggregate.ValueObjects;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
@@ -9,7 +10,7 @@ namespace Domain.Cliente.Aggregate.Entities
 		public string Complemento { get; set; }
 		public string Cidade { get; set; }
 		public string Estado { get; set; }
-		public string CEP { get; set; }
+		public CEP CEP { get; set; }
 		public ETipoEndereco Tipo { get; set; }
 	}
 }
