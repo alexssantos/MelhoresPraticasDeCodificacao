@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Specification;
+using System;
 using System.Collections.Generic;
 
 namespace Domain.Cliente.Aggregate.Respositories
@@ -10,7 +11,10 @@ namespace Domain.Cliente.Aggregate.Respositories
 		public void Save(T obj);
 		public void Update(Guid id, T obj);
 		public void Delete(Guid id);
-		//T GetOneByCriteria(ISpecification<T> expr);
-		//IList<T> GetAllByCriteria(ISpecification<T> expr);
+
+		//T GetOneByCriteria(Expression<Func<T, bool>><T> expr);
+		T GetOneByCriteria(ISpecification<T> expr);
+		//IList<T> GetAllByCriteria(Expression<Func<T, bool>><T> expr);
+		IList<T> GetAllByCriteria(ISpecification<T> expr);
 	}
 }
