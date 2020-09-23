@@ -1,34 +1,38 @@
-﻿namespace Domain.Cliente.Aggregate.Entities
+﻿using System;
+
+namespace Domain.Cliente.Aggregate.Entities
 {
 	public class ContaSalario : Conta
 	{
-		public float MaxSaquePorMes { get; set; }
-
+		private readonly decimal MaxSaquePorMes = 3;
+		private decimal QtdSaqueNoMes = 0;
 
 		public ContaSalario(int numero, int agencia, int saldo) : base(numero, agencia, saldo)
 		{
+
 		}
 
-
-		public override void Depositar()
+		public decimal SaqueTotalRestante()
 		{
-			//Logica de Negocio aqui
-
-			throw new System.NotImplementedException();
+			return MaxSaquePorMes - QtdSaqueNoMes;
 		}
 
-		public override void Sacar()
+		public override void Sacar(Transacao saque)
 		{
-			//Logica de Negocio aqui
+			decimal totalSaqueNoMes = saque.Valor + QtdSaqueNoMes;
 
-			throw new System.NotImplementedException();
+			if (totalSaqueNoMes > MaxSaquePorMes)
+				throw new Exception($"Valor de saque por mês excedido. Valor restante para saque no mês: R${SaqueTotalRestante()}");
 		}
 
-		public override void Transferir()
+		public override void Depositar(Transacao deposito)
 		{
-			//Logica de Negocio aqui
+			throw new NotImplementedException();
+		}
 
-			throw new System.NotImplementedException();
+		public override void Transferir(Transacao transferencia)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

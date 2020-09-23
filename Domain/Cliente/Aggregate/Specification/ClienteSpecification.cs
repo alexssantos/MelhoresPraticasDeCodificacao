@@ -9,7 +9,7 @@ namespace Domain.Cliente.Aggregate.Specification
 			//expression
 			Specification<Entities.Cliente> spec = new Specification<Entities.Cliente>(x => x.CPF.Valor == cpf);
 			//condiction
-			spec.And(new Specification<Entities.Cliente>(x => !string.IsNullOrWhiteSpace(x.Email.Valor)));
+			spec.And(new Specification<Entities.Cliente>(x => !string.IsNullOrWhiteSpace(x.CPF.Valor)));
 
 			return spec;
 		}

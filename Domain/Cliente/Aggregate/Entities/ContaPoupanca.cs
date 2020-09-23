@@ -16,24 +16,18 @@ namespace Domain.Cliente.Aggregate.Entities
 			TaxaDeJutos = taxaDeJutos;
 		}
 
-		public override void Depositar()
+		public override void Sacar(Transacao saque)
 		{
-			//Logica de Negocio aqui
-
 			throw new NotImplementedException();
 		}
 
-		public override void Sacar()
+		public override void Depositar(Transacao deposito)
 		{
-			//Logica de Negocio aqui
-
 			throw new NotImplementedException();
 		}
 
-		public override void Transferir()
+		public override void Transferir(Transacao transferencia)
 		{
-			//Logica de Negocio aqui
-
 			throw new NotImplementedException();
 		}
 	}
