@@ -29,7 +29,7 @@ namespace WEB_API.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
-			var lista = this.ClienteService.ListarTodos();
+			var lista = this.ClienteService.ListarTodosClientes();
 
 			return Ok(lista);
 		}

@@ -26,13 +26,13 @@ namespace Domain.Specification
 
 		public Specification<T> And(ISpecification<T> specification)
 		{
-			this.Criteria = new AndSpecification<T>(this, specification as Specification<T>).Criteria;
+			this.Criteria = new AndSpecification<T>(this, specification as Specification<T>).SatisfyByCriteria();
 			return this;
 		}
 
 		public Specification<T> Or(ISpecification<T> specification)
 		{
-			this.Criteria = new OrSpecification<T>(this, specification as Specification<T>).Criteria;
+			this.Criteria = new OrSpecification<T>(this, specification as Specification<T>).SatisfyByCriteria();
 			return this;
 		}
 

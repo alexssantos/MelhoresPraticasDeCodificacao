@@ -22,14 +22,14 @@ namespace Domain.Cliente.Aggregate.Entities
 
 		public Cliente() { }
 
-		public Cliente(string nome, CPF cpf, DataNascimento dataNascimento)
+		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento)
 		{
 			this.DataNascimento = dataNascimento;
 			this.CPF = cpf;
 			this.Nome = nome;
 		}
 
-		public Cliente(string nome, CPF cpf, DataNascimento dataNascimento, Filiacao pai, Filiacao mae) : this(nome, cpf, dataNascimento)
+		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento, Filiacao pai, Filiacao mae) : this(nome, cpf, dataNascimento)
 		{
 			this.Mae = mae;
 			this.Pai = pai;
@@ -41,7 +41,7 @@ namespace Domain.Cliente.Aggregate.Entities
 			return this.Contas.ToList();
 		}
 
-		public Conta ObterConta(Guid id)
+		internal Conta ObterConta(Guid id)
 		{
 			return this.Contas.FirstOrDefault(x => x.Id == id);
 		}
