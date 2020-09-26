@@ -6,12 +6,12 @@ namespace Domain.Cliente.Aggregate.Entities
 	{
 		public float TaxaDeJutos { get; set; }
 
-		public ContaPoupanca(int numero, int agencia, int saldo) : base(numero, agencia, saldo)
+		public ContaPoupanca(int numero, int agencia, int digitoAg, decimal saldo) : base(numero, agencia, digitoAg, saldo)
 		{
 
 		}
 
-		public ContaPoupanca(float taxaDeJutos, int numero, int agencia, int saldo) : this(numero, agencia, saldo)
+		public ContaPoupanca(float taxaDeJutos, int numero, int agencia, int digitoAg, decimal saldo) : this(numero, agencia, digitoAg, saldo)
 		{
 			TaxaDeJutos = taxaDeJutos;
 		}

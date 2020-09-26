@@ -10,10 +10,11 @@ namespace Domain.Cliente.Aggregate.Entities
 		public decimal Saldo { get; internal set; }
 		public IList<Transacao> Transacoes { get; set; }
 
-		protected Conta(int numero, int agencia, int saldo)
+		protected Conta(int numero, int agencia, int digitoAg, decimal saldo)
 		{
 			Numero = numero;
 			Agencia = agencia;
+			AgenciaDigito = digitoAg;
 			Saldo = saldo;
 		}
 
