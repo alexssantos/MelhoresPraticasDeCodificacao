@@ -48,9 +48,15 @@ namespace Domain.Cliente.Aggregate.Entities
 			return this.Contas.ToList();
 		}
 
-		internal Conta ObterConta(Guid id)
+		public Conta ObterConta(Guid id)
 		{
 			return this.Contas.FirstOrDefault(x => x.Id == id);
+		}
+
+		public void RemoverConta(Guid id)
+		{
+			var conta = ObterConta(id);
+			Contas.Remove(conta);
 		}
 
 		public void AdicionarConta(Conta conta)

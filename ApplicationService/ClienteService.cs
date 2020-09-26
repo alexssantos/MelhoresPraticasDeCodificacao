@@ -10,7 +10,7 @@ namespace ApplicationService
 {
 	public class ClienteService : IClienteService
 	{
-		public IClienteRepositorio Repositorio { get; set; }
+		private IClienteRepositorio Repositorio { get; set; }
 
 		public ClienteService(IClienteRepositorio repo)
 		{

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
@@ -8,18 +9,29 @@ namespace Domain.Cliente.Aggregate.Entities
 		public int Agencia { get; internal set; }
 		public int AgenciaDigito { get; internal set; }
 		public decimal Saldo { get; internal set; }
+		public Guid ClienteId { get; internal set; }
 		public IList<Transacao> Transacoes { get; set; }
 
-		protected Conta(int numero, int agencia, int digitoAg, decimal saldo)
+		protected Conta(int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId)
 		{
 			Numero = numero;
 			Agencia = agencia;
 			AgenciaDigito = digitoAg;
 			Saldo = saldo;
+			ClienteId = clienteId;
 		}
 
 		abstract public void Sacar(Transacao saque);
 		abstract public void Depositar(Transacao deposito);
 		abstract public void Transferir(Transacao transferencia);
+
+		public void ValidarExcluirConta()
+		{
+			//conta não pode ser exluido com saldo existente;
+			if (this.Saldo > 0)
+			{
+				throw new Exception("Esta conta não pode ser excluida pois possui saldo.");
+			}
+		}
 	}
 }

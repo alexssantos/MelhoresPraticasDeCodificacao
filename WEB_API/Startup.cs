@@ -24,6 +24,8 @@ namespace WEB_API
 		{
 			services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
 			services.AddScoped<IClienteService, ClienteService>();
+			services.AddScoped<IContaService, ContaService>();
+			services.AddScoped<IContaRepositorio, ContaRepositorio>();
 
 			services.AddControllers();
 		}

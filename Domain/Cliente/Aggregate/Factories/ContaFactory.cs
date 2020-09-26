@@ -4,7 +4,7 @@ namespace Domain.Cliente.Aggregate.Factories
 {
 	public static class ContaFactory
 	{
-		public static Conta Criar(Entities.Cliente cliente, int conta, int agencia, int digitoAg, decimal saldo)
+		public static Conta Criar(int conta, int agencia, int digitoAg, decimal saldo)
 		{
 			//STRATEGY PATTERN
 
