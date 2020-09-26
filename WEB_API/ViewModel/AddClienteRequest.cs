@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WEB_API.ViewModel
 {
-	public class ClienteDto
+	public class AddClienteRequest
 	{
 		[Required(ErrorMessage = "Campo Nome é Obrigatorio")]
 		public string Nome { get; set; }

@@ -23,5 +23,7 @@ namespace Domain.Cliente.Aggregate.Specification
 
 			return spec;
 		}
+
+
 	}
 }

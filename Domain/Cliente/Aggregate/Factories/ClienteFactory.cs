@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Cliente.Aggregate.ValueObjects;
+using System;
 
 namespace Domain.Cliente.Aggregate.Factories
 {
@@ -9,10 +10,21 @@ namespace Domain.Cliente.Aggregate.Factories
 		{
 			return new Entities.Cliente(
 				nome,
-				new ValueObjects.CPF(cpf),
-				new ValueObjects.DataNascimento(dataNascimento));
+				new CPF(cpf),
+				new DataNascimento(dataNascimento));
 		}
 
+
+		public static Entities.Cliente Criar(string nome, CPF cpf, string email, DateTime dataNascimento, string nomePai, string nomeMae)
+		{
+			return new Entities.Cliente(
+				nome,
+				cpf,
+				new Email(email),
+				new DataNascimento(dataNascimento),
+				new Filiacao(nomePai),
+				new Filiacao(nomeMae));
+		}
 
 	}
 }

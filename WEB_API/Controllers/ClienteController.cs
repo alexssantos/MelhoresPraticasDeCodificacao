@@ -15,23 +15,41 @@ namespace WEB_API.Controllers
 			this.ClienteService = clienteService;
 		}
 
-		[HttpPost]
-		public IActionResult Post([FromBody] ClienteDto request)
-		{
-			if (!ModelState.IsValid)
-				return BadRequest(ModelState);
-
-			this.ClienteService.CreateCliente(request.Nome, request.CPF, request.DataNascimento);
-
-			return Ok();
-		}
-
 		[HttpGet]
 		public IActionResult GetAll()
 		{
 			var lista = this.ClienteService.ListarTodosClientes();
 
 			return Ok(lista);
+		}
+
+		[HttpPost]
+		public IActionResult Post([FromBody] AddClienteRequest request)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
+
+			this.ClienteService.CriarCliente(request.Nome, request.CPF, request.DataNascimento);
+
+			return Ok();
+		}
+
+
+		[HttpPut]
+		public IActionResult Update([FromBody] UpdateClienteRequest request)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
+
+			this.ClienteService.AtualizarCliente(
+				request.Id,
+				request.Nome,
+				request.Email,
+				request.DataNascimento,
+				request.NomePai,
+				request.NomeMae);
+
+			return Ok();
 		}
 	}
 
