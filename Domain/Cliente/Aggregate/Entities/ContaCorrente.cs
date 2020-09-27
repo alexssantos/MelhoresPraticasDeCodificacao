@@ -10,11 +10,11 @@ namespace Domain.Cliente.Aggregate.Entities
 		private readonly decimal MaxValorTransacaoPorMes = 1000;
 
 
-		public ContaCorrente(int numero, int agencia, int digitoAg, decimal saldo) : base(numero, agencia, digitoAg, saldo)
+		public ContaCorrente(int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId) : base(numero, agencia, digitoAg, saldo, clienteId)
 		{
 		}
 
-		public ContaCorrente(decimal? maxValorTransacaoPorMes, int numero, int agencia, int digitoAg, decimal saldo) : this(numero, agencia, digitoAg, saldo)
+		public ContaCorrente(decimal? maxValorTransacaoPorMes, int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId) : this(numero, agencia, digitoAg, saldo, clienteId)
 		{
 			MaxValorTransacaoPorMes = maxValorTransacaoPorMes ?? MaxValorTransacaoPorMes;
 		}

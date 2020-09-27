@@ -9,7 +9,8 @@ namespace Domain.Cliente.Aggregate.Entities
 		public int Agencia { get; internal set; }
 		public int AgenciaDigito { get; internal set; }
 		public decimal Saldo { get; internal set; }
-		public Guid ClienteId { get; internal set; }
+		public Guid ClienteId { get; set; }
+		public Cliente Cliente { get; set; }
 		public IList<Transacao> Transacoes { get; set; }
 
 		protected Conta(int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId)

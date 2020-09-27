@@ -24,6 +24,9 @@ namespace ApplicationService
 
 
 			Cliente cliente = ClienteFactory.Criar(nome, cpf, dataNascimento);
+
+			//ContaCorrente conta = new ContaCorrente(1, 2, 0, 1.002M, cliente.Id);
+			//cliente.AdicionarConta(conta);
 			this.Repositorio.Save(cliente);
 			return cliente;
 		}

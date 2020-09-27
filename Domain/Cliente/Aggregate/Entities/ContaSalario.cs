@@ -7,7 +7,7 @@ namespace Domain.Cliente.Aggregate.Entities
 		private readonly decimal MaxSaquePorMes = 3;
 		private decimal QtdSaqueNoMes = 0;
 
-		public ContaSalario(int numero, int agencia, int digitoAg, decimal saldo) : base(numero, agencia, digitoAg, saldo)
+		public ContaSalario(int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId) : base(numero, agencia, digitoAg, saldo, clienteId)
 		{
 		}
 

@@ -17,7 +17,7 @@ namespace Domain.Cliente.Aggregate.Entities
 		public string Login { get; internal set; }
 		public IList<Endereco> Enderecos { get; internal set; }
 		public IList<Telefone> Telefones { get; internal set; }
-		public IList<Conta> Contas { get; internal set; }
+		public IList<Conta> Contas { get; internal set; } = new List<Conta>();
 
 
 		public Cliente() { }
@@ -29,13 +29,15 @@ namespace Domain.Cliente.Aggregate.Entities
 			this.Nome = nome;
 		}
 
-		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento, Filiacao pai, Filiacao mae) : this(nome, cpf, dataNascimento)
+		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento, Filiacao pai, Filiacao mae)
+			: this(nome, cpf, dataNascimento)
 		{
 			this.Mae = mae;
 			this.Pai = pai;
 		}
 
-		internal Cliente(string nome, CPF cpf, Email email, DataNascimento dataNascimento, Filiacao pai, Filiacao mae) : this(nome, cpf, dataNascimento)
+		internal Cliente(string nome, CPF cpf, Email email, DataNascimento dataNascimento, Filiacao pai, Filiacao mae)
+			: this(nome, cpf, dataNascimento)
 		{
 			this.Email = email;
 			this.Mae = mae;
@@ -45,7 +47,7 @@ namespace Domain.Cliente.Aggregate.Entities
 
 		public List<Conta> ObterContas()
 		{
-			return this.Contas.ToList();
+			return Contas.ToList();
 		}
 
 		public Conta ObterConta(Guid id)

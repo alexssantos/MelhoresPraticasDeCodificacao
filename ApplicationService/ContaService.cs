@@ -36,10 +36,10 @@ namespace ApplicationService
 			throw new NotImplementedException();
 		}
 
-		public Conta CriarConta(int conta, int agencia, int digitoAg, decimal saldo)
+		public Conta CriarConta(int conta, int agencia, int digitoAg, decimal saldo, Guid idCliente)
 		{
 
-			var contaObj = ContaFactory.Criar(conta, agencia, digitoAg, saldo);
+			var contaObj = ContaFactory.Criar(conta, agencia, digitoAg, saldo, idCliente);
 			this.Repositorio.Save(contaObj);
 			return contaObj;
 		}

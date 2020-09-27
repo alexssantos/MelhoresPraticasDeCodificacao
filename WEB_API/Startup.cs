@@ -3,9 +3,11 @@ using Domain.Cliente.Aggregate.Respositories;
 using Domain.Cliente.Aggregate.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Repository.Context;
 using Repository.Repositories;
 
 namespace WEB_API
@@ -26,6 +28,9 @@ namespace WEB_API
 			services.AddScoped<IClienteService, ClienteService>();
 			services.AddScoped<IContaService, ContaService>();
 			services.AddScoped<IContaRepositorio, ContaRepositorio>();
+
+			services.AddDbContext<BankContext>(options =>
+				options.UseInMemoryDatabase("AT-DataBase"));
 
 			services.AddControllers();
 		}
