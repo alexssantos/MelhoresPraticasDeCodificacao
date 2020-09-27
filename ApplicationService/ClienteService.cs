@@ -57,6 +57,7 @@ namespace ApplicationService
 			var cliente = BuscarCliente(IdCliente);
 
 			cliente.ApagarCliente();
+
 			this.Repositorio.Delete(IdCliente);
 			return cliente;
 		}

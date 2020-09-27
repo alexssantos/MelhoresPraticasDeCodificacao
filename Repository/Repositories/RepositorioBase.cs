@@ -47,10 +47,6 @@ namespace Repository.Repositories
 
 		public void Update(Guid id, T entity)
 		{
-			//var objOld = this.Query.Find(id);
-
-			//objOld = entity;
-
 			this.Query.Update(entity);
 			this.Context.Entry(entity).State = EntityState.Modified;
 			this.Context.SaveChanges();

@@ -1,5 +1,6 @@
 ﻿using Domain.Cliente.Aggregate.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using WEB_API.ViewModel;
 
 namespace WEB_API.Controllers
@@ -48,6 +49,18 @@ namespace WEB_API.Controllers
 				request.DataNascimento,
 				request.NomePai,
 				request.NomeMae);
+
+			return Ok();
+		}
+
+		[HttpDelete("{id}")]
+		public IActionResult Delete(Guid id)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
+
+			this.ClienteService.ApagarCliente(id);
+
 
 			return Ok();
 		}
