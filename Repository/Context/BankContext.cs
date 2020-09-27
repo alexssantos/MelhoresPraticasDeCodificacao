@@ -18,13 +18,16 @@ namespace Repository.Context
 		public DbSet<ContaCorrente> ContasCorrente { get; set; }
 		public DbSet<ContaPoupanca> ContasPoupanca { get; set; }
 		public DbSet<ContaSalario> ContasSalario { get; set; }
+		//public DbSet<Endereco> Enderecos { get; set; }
+		//public DbSet<Telefone> Telefones { get; set; }
+		//public DbSet<Transacao> Transacoes { get; set; }
 
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			builder.ApplyConfiguration(new ClienteMap());
-			//builder.ApplyConfiguration(new UserAddressMap());
-			//builder.ApplyConfiguration(new UserAccountMap());
+			builder.ApplyConfiguration(new ContaMap());
+
 
 			base.OnModelCreating(builder);
 		}

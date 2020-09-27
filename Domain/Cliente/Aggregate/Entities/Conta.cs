@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
@@ -10,6 +11,8 @@ namespace Domain.Cliente.Aggregate.Entities
 		public int AgenciaDigito { get; internal set; }
 		public decimal Saldo { get; internal set; }
 		public Guid ClienteId { get; set; }
+
+		[JsonIgnore]
 		public Cliente Cliente { get; set; }
 		public IList<Transacao> Transacoes { get; set; }
 

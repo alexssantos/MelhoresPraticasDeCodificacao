@@ -27,13 +27,17 @@ namespace Domain.Cliente.Aggregate.Entities
 
 		//public IList<Telefone> Telefones { get; internal set; }
 
-		public IList<Conta> Contas { get; internal set; } = new List<Conta>();
+		public virtual ICollection<Conta> Contas { get; internal set; }
 
 
-		public Cliente() : base(null) { }
+		public Cliente() : base(null)
+		{
+			this.Contas = new List<Conta>();
+		}
 
 		internal Cliente(Guid? id, string nome, CPF cpf, DataNascimento dataNascimento) : base(id)
 		{
+			this.Contas = new List<Conta>();
 			this.DataNascimento = dataNascimento;
 			this.CPF = cpf;
 			this.Nome = nome;

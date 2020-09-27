@@ -12,7 +12,7 @@ namespace Repository.Repositories
 	public class RepositorioBase<T> : IRepositorioBase<T> where T : Entity
 	{
 
-		private DbSet<T> Query { get; set; }
+		protected DbSet<T> Query { get; set; }
 		private BankContext Context { get; set; }
 
 		public RepositorioBase(BankContext context)

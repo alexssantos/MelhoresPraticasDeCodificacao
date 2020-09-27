@@ -43,7 +43,7 @@ namespace ApplicationService
 			var usuario = BuscarCliente(id);
 
 			usuario.Nome = nome;
-			usuario.Email = new Email(email);			
+			usuario.Email = new Email(email);
 			usuario.DataNascimento = new DataNascimento(dataNascimento);
 			usuario.Pai = new Filiacao(nomePai);
 			usuario.Mae = new Filiacao(nomeMae);
@@ -64,7 +64,15 @@ namespace ApplicationService
 
 		public IList<Cliente> ListarTodosClientes()
 		{
-			return Repositorio.GetAll();
+			return Repositorio.GetAllWithChildren();
+		}
+
+		public Cliente AdicionarConta(Conta conta)
+		{
+			var cliente = BuscarCliente(conta.ClienteId);
+			cliente.AdicionarConta(conta);
+			//this.Repositorio.Update(conta.ClienteId, cliente);
+			return cliente;
 		}
 	}
 }

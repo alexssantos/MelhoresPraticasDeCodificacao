@@ -80,7 +80,6 @@ namespace Repository.MapEntities
 			//1 cliente => N contas
 			builder.HasMany(g => g.Contas)
 				.WithOne(s => s.Cliente)
-				.HasForeignKey(s => s.ClienteId)
 				.OnDelete(DeleteBehavior.Cascade);
 		}
 	}
