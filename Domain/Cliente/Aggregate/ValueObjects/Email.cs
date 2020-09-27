@@ -6,6 +6,12 @@ namespace Domain.Cliente.Aggregate.ValueObjects
 	public class Email : Shared.ValueObject
 	{
 		public string Valor { get; set; }
+
+		public Email()
+		{
+
+		}
+
 		public Email(string email)
 		{
 			this.Valor = ValidarEmail(email) ? email : throw new Exception("Email está no formato inválido");

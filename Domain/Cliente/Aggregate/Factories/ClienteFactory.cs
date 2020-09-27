@@ -8,18 +8,21 @@ namespace Domain.Cliente.Aggregate.Factories
 		//Basic Cliente
 		public static Entities.Cliente Criar(string nome, string cpf, DateTime dataNascimento)
 		{
+			Guid? id = null;
 			return new Entities.Cliente(
+				id,
 				nome,
 				new CPF(cpf),
 				new DataNascimento(dataNascimento));
 		}
 
 
-		public static Entities.Cliente Criar(string nome, CPF cpf, string email, DateTime dataNascimento, string nomePai, string nomeMae)
+		public static Entities.Cliente Criar(Guid id, string nome, string cpf, string email, DateTime dataNascimento, string nomePai, string nomeMae)
 		{
 			return new Entities.Cliente(
+				id,
 				nome,
-				cpf,
+				new CPF(cpf),
 				new Email(email),
 				new DataNascimento(dataNascimento),
 				new Filiacao(nomePai),

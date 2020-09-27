@@ -13,7 +13,13 @@ namespace Domain.Cliente.Aggregate.Entities
 		public Cliente Cliente { get; set; }
 		public IList<Transacao> Transacoes { get; set; }
 
-		protected Conta(int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId)
+
+		public Conta() : base(null)
+		{
+
+		}
+
+		protected Conta(int numero, int agencia, int digitoAg, decimal saldo, Guid clienteId) : base(null)
 		{
 			Numero = numero;
 			Agencia = agencia;

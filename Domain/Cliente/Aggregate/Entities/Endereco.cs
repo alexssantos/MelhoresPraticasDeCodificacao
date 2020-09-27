@@ -12,5 +12,10 @@ namespace Domain.Cliente.Aggregate.Entities
 		public string Estado { get; set; }
 		public CEP CEP { get; set; }
 		public ETipoEndereco Tipo { get; set; }
+
+		public Endereco() : base(null)
+		{
+
+		}
 	}
 }

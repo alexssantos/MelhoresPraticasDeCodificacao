@@ -7,5 +7,10 @@ namespace Domain.Cliente.Aggregate.Entities
 	{
 		public Numero Numero { get; set; }
 		public ETipoTelefone Tipo { get; set; }
+
+		public Telefone() : base(null)
+		{
+
+		}
 	}
 }

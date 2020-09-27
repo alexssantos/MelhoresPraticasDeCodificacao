@@ -1,13 +1,17 @@
 ﻿using Domain.Cliente.Aggregate.Entities;
 using Domain.Cliente.Aggregate.Respositories;
+using Repository.Context;
 
 namespace Repository.Repositories
 {
 	public class ClienteRepositorio : RepositorioBase<Cliente>, IClienteRepositorio
 	{
-		public ClienteRepositorio()
+		private BankContext Context { get; set; }
+
+
+		public ClienteRepositorio(BankContext context) : base(context)
 		{
-			//empty
+			this.Context = context;
 		}
 	}
 }

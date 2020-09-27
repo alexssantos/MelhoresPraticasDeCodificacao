@@ -14,6 +14,7 @@ namespace Repository.Context
 		}
 
 		public DbSet<Cliente> Clientes { get; set; }
+		public DbSet<Conta> Contas { get; set; }
 		public DbSet<ContaCorrente> ContasCorrente { get; set; }
 		public DbSet<ContaPoupanca> ContasPoupanca { get; set; }
 		public DbSet<ContaSalario> ContasSalario { get; set; }

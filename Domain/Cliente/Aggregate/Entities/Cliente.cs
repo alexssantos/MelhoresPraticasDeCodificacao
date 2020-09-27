@@ -7,22 +7,32 @@ namespace Domain.Cliente.Aggregate.Entities
 {
 	public class Cliente : Shared.Entity
 	{
-		public string Nome { get; internal set; }
-		public DataNascimento DataNascimento { get; internal set; }
-		public CPF CPF { get; internal set; }
-		public Filiacao Pai { get; internal set; }
-		public Filiacao Mae { get; internal set; }
-		public Email Email { get; internal set; }
-		public Password SenhaCliente { get; internal set; }
-		public string Login { get; internal set; }
-		public IList<Endereco> Enderecos { get; internal set; }
-		public IList<Telefone> Telefones { get; internal set; }
+		public string Nome { get; set; }
+
+		public DataNascimento DataNascimento { get; set; }
+
+		public CPF CPF { get; set; }
+
+		public Filiacao Pai { get; set; }
+
+		public Filiacao Mae { get; set; }
+
+		public Email Email { get; set; }
+
+		public Password SenhaCliente { get; set; }
+
+		public string Login { get; set; }
+
+		//public IList<Endereco> Enderecos { get; internal set; }
+
+		//public IList<Telefone> Telefones { get; internal set; }
+
 		public IList<Conta> Contas { get; internal set; } = new List<Conta>();
 
 
-		public Cliente() { }
+		public Cliente() : base(null) { }
 
-		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento)
+		internal Cliente(Guid? id, string nome, CPF cpf, DataNascimento dataNascimento) : base(id)
 		{
 			this.DataNascimento = dataNascimento;
 			this.CPF = cpf;
@@ -30,14 +40,14 @@ namespace Domain.Cliente.Aggregate.Entities
 		}
 
 		internal Cliente(string nome, CPF cpf, DataNascimento dataNascimento, Filiacao pai, Filiacao mae)
-			: this(nome, cpf, dataNascimento)
+			: this(null, nome, cpf, dataNascimento)
 		{
 			this.Mae = mae;
 			this.Pai = pai;
 		}
 
-		internal Cliente(string nome, CPF cpf, Email email, DataNascimento dataNascimento, Filiacao pai, Filiacao mae)
-			: this(nome, cpf, dataNascimento)
+		internal Cliente(Guid? id, string nome, CPF cpf, Email email, DataNascimento dataNascimento, Filiacao pai, Filiacao mae)
+			: this(id, nome, cpf, dataNascimento)
 		{
 			this.Email = email;
 			this.Mae = mae;

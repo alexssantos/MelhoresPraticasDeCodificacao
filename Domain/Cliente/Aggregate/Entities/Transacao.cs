@@ -11,5 +11,10 @@ namespace Domain.Cliente.Aggregate.Entities
 		public string Descricao { get; set; }
 		public ETipoTransacao Tipo { get; set; }
 		public DateTime Data { get; set; }
+
+		public Transacao() : base(null)
+		{
+
+		}
 	}
 }

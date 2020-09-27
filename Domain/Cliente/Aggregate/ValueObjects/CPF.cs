@@ -2,14 +2,14 @@
 
 namespace Domain.Cliente.Aggregate.ValueObjects
 {
-	public class CPF : Shared.ValueObject
+	public class CPF //: Shared.ValueObject
 	{
 		public string Valor { get; set; }
 
-		public CPF()
-		{
+		//public CPF()
+		//{
 
-		}
+		//}
 
 		public CPF(string valor)
 		{

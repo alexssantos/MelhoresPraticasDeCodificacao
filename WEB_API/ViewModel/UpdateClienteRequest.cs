@@ -14,9 +14,6 @@ namespace WEB_API.ViewModel
 		[Required(ErrorMessage = "Campo Email é Obrigatorio")]
 		public string Email { get; set; }
 
-		[Required(ErrorMessage = "Campo CPF é Obrigatorio")]
-		public string CPF { get; set; }
-
 		[Required(ErrorMessage = "Campo Data Nascimento é Obrigatorio")]
 		public DateTime DataNascimento { get; set; }
 

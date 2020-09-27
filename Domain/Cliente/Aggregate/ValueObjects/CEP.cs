@@ -2,7 +2,7 @@
 
 namespace Domain.Cliente.Aggregate.ValueObjects
 {
-	public class CEP
+	public class CEP : Shared.ValueObject
 	{
 		public string Valor { get; set; }
 

@@ -3,6 +3,7 @@ using Domain.Cliente.Aggregate.Factories;
 using Domain.Cliente.Aggregate.Respositories;
 using Domain.Cliente.Aggregate.Services;
 using Domain.Cliente.Aggregate.Specification;
+using Domain.Cliente.Aggregate.ValueObjects;
 using System;
 using System.Collections.Generic;
 
@@ -25,8 +26,6 @@ namespace ApplicationService
 
 			Cliente cliente = ClienteFactory.Criar(nome, cpf, dataNascimento);
 
-			//ContaCorrente conta = new ContaCorrente(1, 2, 0, 1.002M, cliente.Id);
-			//cliente.AdicionarConta(conta);
 			this.Repositorio.Save(cliente);
 			return cliente;
 		}
@@ -41,11 +40,16 @@ namespace ApplicationService
 
 		public Cliente AtualizarCliente(Guid id, string nome, string email, DateTime dataNascimento, string nomePai, string nomeMae)
 		{
-			var usuarioAntigo = BuscarCliente(id);
+			var usuario = BuscarCliente(id);
 
-			var clienteAtual = ClienteFactory.Criar(nome, usuarioAntigo.CPF, email, dataNascimento, nomePai, nomeMae);
-			this.Repositorio.Update(id, clienteAtual);
-			return clienteAtual;
+			usuario.Nome = nome;
+			usuario.Email = new Email(email);			
+			usuario.DataNascimento = new DataNascimento(dataNascimento);
+			usuario.Pai = new Filiacao(nomePai);
+			usuario.Mae = new Filiacao(nomeMae);
+
+			this.Repositorio.Update(id, usuario);
+			return usuario;
 		}
 
 		public Cliente ApagarCliente(Guid IdCliente)
