@@ -75,11 +75,15 @@ namespace Domain.Cliente.Aggregate.Entities
 			Contas.Remove(conta);
 		}
 
-		public void AdicionarConta(Conta conta)
+		public void AdicionarConta(Conta conta, Guid contaId)
 		{
-			if (this.ObterConta(conta.Id) != null)
+			var contaSalva = this.ObterConta(contaId);
+			if (contaSalva != null)
 			{
-				throw new Exception("Não é permitido inserir duas contas iguais");
+				if ((contaSalva.Numero == conta.Numero) && (contaSalva.Agencia == conta.Agencia))
+				{
+					throw new Exception("Não é permitido inserir duas contas iguais");
+				}
 			}
 
 			if (this.DataNascimento.Idade < 18)

@@ -18,9 +18,14 @@ namespace ApplicationService
 			this.Repositorio = repo;
 		}
 
+		public ClienteService()
+		{
+		}
+
 		public Cliente CriarCliente(string nome, string cpf, DateTime dataNascimento)
 		{
-			if (this.Repositorio.GetOneByCriteria(ClienteSpecification.GetByCPF(cpf)) != null)
+			var result = this.Repositorio.GetOneByCriteria(ClienteSpecification.GetByCPF(cpf));
+			if (result != null)
 				throw new Exception($"Cliente já existente na base com este cpf: {cpf}");
 
 
@@ -70,7 +75,7 @@ namespace ApplicationService
 		public Cliente AdicionarConta(Conta conta)
 		{
 			var cliente = BuscarCliente(conta.ClienteId);
-			cliente.AdicionarConta(conta);
+			cliente.AdicionarConta(conta, conta.Id);
 			//this.Repositorio.Update(conta.ClienteId, cliente);
 			return cliente;
 		}
