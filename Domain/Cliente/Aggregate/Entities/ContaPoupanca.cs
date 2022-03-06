@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
+	[ExcludeFromCodeCoverage]
 	public class ContaPoupanca : Conta
 	{
 		public float TaxaDeJutos { get; set; }

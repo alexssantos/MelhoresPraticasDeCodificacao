@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Cliente.Aggregate.ValueObjects
 {
+	[ExcludeFromCodeCoverage]
 	public class Numero
 	{
 		public string Valor { get; set; }

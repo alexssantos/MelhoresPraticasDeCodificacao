@@ -1,8 +1,10 @@
 ﻿using Domain.Cliente.Aggregate.Enums;
 using Domain.Cliente.Aggregate.ValueObjects;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
+	[ExcludeFromCodeCoverage]
 	public class Endereco : Shared.Entity
 	{
 		public string Logradouro { get; set; }

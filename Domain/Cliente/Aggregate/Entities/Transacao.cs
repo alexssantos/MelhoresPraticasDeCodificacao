@@ -1,8 +1,10 @@
 ﻿using Domain.Cliente.Aggregate.Enums;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
+	[ExcludeFromCodeCoverage]
 	public class Transacao : Shared.Entity
 	{
 		public decimal Valor { get; set; }

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
+	[ExcludeFromCodeCoverage]
 	public class ContaSalario : Conta
 	{
 		private readonly decimal MaxSaquePorMes = 3;

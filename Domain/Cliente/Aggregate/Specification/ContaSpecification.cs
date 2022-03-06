@@ -1,8 +1,10 @@
 ﻿using Domain.Cliente.Aggregate.Entities;
 using Domain.Specification;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Cliente.Aggregate.Specification
 {
+	[ExcludeFromCodeCoverage]
 	public static class ContaSpecification
 	{
 		public static ISpecification<Conta> GetByAgencia(int agencia)

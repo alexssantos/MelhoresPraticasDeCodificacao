@@ -2,9 +2,9 @@
 <CoverageSession>
   <Summary numSequencePoints="458" visitedSequencePoints="182" numBranchPoints="60" visitedBranchPoints="23" sequenceCoverage="39.73" branchCoverage="38.33" maxCyclomaticComplexity="162" minCyclomaticComplexity="20" visitedClasses="17" numClasses="26" visitedMethods="53" numMethods="140" />
   <Modules>
-    <Module hash="0BA4959F-FF36-4A9B-B385-EF1413489344">
+    <Module hash="0E21A450-C0BE-4CBC-8B36-45916BFC0FBC">
       <ModulePath>ApplicationService.dll</ModulePath>
-      <ModuleTime>2022-03-06T10:06:11</ModuleTime>
+      <ModuleTime>2022-03-06T11:08:57</ModuleTime>
       <ModuleName>ApplicationService</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\repos\dotnet\MelhoresPraticasDeCodificacao\ApplicationService\ClienteService.cs" />
@@ -281,9 +281,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="E7DD2B67-9F4A-4317-B3FE-2E99D0DDF5C0">
+    <Module hash="5A00F942-4A63-4930-A205-5183EB2EE575">
       <ModulePath>Domain.dll</ModulePath>
-      <ModuleTime>2022-03-06T10:06:11</ModuleTime>
+      <ModuleTime>2022-03-06T11:08:57</ModuleTime>
       <ModuleName>Domain</ModuleName>
       <Files>
         <File uid="3" fullPath="C:\repos\dotnet\MelhoresPraticasDeCodificacao\Domain\Specification\ParameterReplacer.cs" />

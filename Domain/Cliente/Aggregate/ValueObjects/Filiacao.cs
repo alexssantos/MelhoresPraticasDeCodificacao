@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 namespace Domain.Cliente.Aggregate.ValueObjects
 {
+	[ExcludeFromCodeCoverage]
 	public class Filiacao : Shared.ValueObject
 	{
 		public string Nome { get; set; }

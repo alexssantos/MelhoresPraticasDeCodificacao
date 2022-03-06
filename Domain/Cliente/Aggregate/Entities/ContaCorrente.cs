@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
+	[ExcludeFromCodeCoverage]
 	public class ContaCorrente : Conta
 	{
 		private readonly int MaxDepositoPorMes = 5;

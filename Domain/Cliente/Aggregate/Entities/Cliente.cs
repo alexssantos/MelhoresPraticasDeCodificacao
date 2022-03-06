@@ -1,10 +1,12 @@
 ﻿using Domain.Cliente.Aggregate.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Domain.Cliente.Aggregate.Entities
 {
+	[ExcludeFromCodeCoverage]
 	public class Cliente : Shared.Entity
 	{
 		public string Nome { get; set; }

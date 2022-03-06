@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 namespace Domain.Cliente.Aggregate.ValueObjects
 {
+	[ExcludeFromCodeCoverage]
 	public class Password : Shared.ValueObject
 	{
 		public string Valor { get; set; }

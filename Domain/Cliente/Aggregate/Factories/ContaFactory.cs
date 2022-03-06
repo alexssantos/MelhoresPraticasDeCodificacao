@@ -9,9 +9,7 @@ namespace Domain.Cliente.Aggregate.Factories
 		{
             //STRATEGY PATTERN
 
-#pragma warning disable CS8846 // A expressão switch não manipula todos os valores possíveis de seu tipo de entrada (não é exaustiva).
             Conta novaConta = saldo switch
-#pragma warning restore CS8846 // A expressão switch não manipula todos os valores possíveis de seu tipo de entrada (não é exaustiva).
             {
 				_ when (saldo < 50M) 
 					=> new ContaSalario(conta, agencia, digitoAg, saldo, idCliente),

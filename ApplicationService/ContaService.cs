@@ -4,9 +4,11 @@ using Domain.Cliente.Aggregate.Respositories;
 using Domain.Cliente.Aggregate.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ApplicationService
 {
+	[ExcludeFromCodeCoverage]
 	public class ContaService : IContaService
 	{
 		private IContaRepositorio Repositorio { get; set; }
