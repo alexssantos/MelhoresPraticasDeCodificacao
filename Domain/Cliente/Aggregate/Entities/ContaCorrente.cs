@@ -6,7 +6,7 @@ namespace Domain.Cliente.Aggregate.Entities
 	public class ContaCorrente : Conta
 	{
 		private readonly int MaxDepositoPorMes = 5;
-		private readonly int MaxTransacaoPorMes = 30;
+		//private readonly int MaxTransacaoPorMes = 30;
 		private readonly decimal MaxValorTransacaoPorMes = 1000;
 
 		public ContaCorrente()
